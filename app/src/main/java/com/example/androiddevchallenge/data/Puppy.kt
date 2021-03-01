@@ -3,27 +3,50 @@ package com.example.androiddevchallenge.data
 import android.os.Parcelable
 import androidx.annotation.DrawableRes
 import com.example.androiddevchallenge.R
+import com.example.androiddevchallenge.data.Sex.F
+import com.example.androiddevchallenge.data.Sex.M
 import kotlinx.parcelize.Parcelize
+import java.util.*
+
+enum class Sex {
+    M, F;
+
+    fun text() = when(this) {
+        M -> "he"
+        F -> "she"
+    }
+}
+
+private fun createDescription(puppy: Puppy) = with(puppy) {
+    ("This is $name. ${sex.text().capitalize(Locale.ENGLISH)} is $ageMonths months old " +
+            "and ${sex.text()} is a good ${if (sex == M) "boi" else "girl"}. " +
+            "Really wants to meet you. \uD83E\uDD7A")
+        .trim()
+}
 
 @Parcelize
 data class Puppy(
     val name: String,
     val ageMonths: Int,
+    val sex: Sex,
     @DrawableRes val imageRes: Int,
-) : Parcelable
+) : Parcelable {
+    val description: String
+        get() = createDescription(this)
+}
 
 val puppies = listOf(
-    Puppy(name = "Bruno", ageMonths = 7, imageRes = R.drawable.puppy),
-    Puppy(name = "Luna", ageMonths = 3, imageRes = R.drawable.puppy),
-    Puppy(name = "Gafa", ageMonths = 5, imageRes = R.drawable.puppy),
-    Puppy(name = "Reksio", ageMonths = 4, imageRes = R.drawable.puppy),
-    Puppy(name = "Azor", ageMonths = 9, imageRes = R.drawable.puppy),
-    Puppy(name = "Anek", ageMonths = 11, imageRes = R.drawable.puppy),
-    Puppy(name = "Waldo", ageMonths = 3, imageRes = R.drawable.puppy),
-    Puppy(name = "Kasek", ageMonths = 6, imageRes = R.drawable.puppy),
-    Puppy(name = "Barka", ageMonths = 6, imageRes = R.drawable.puppy),
-    Puppy(name = "Kiti", ageMonths = 12, imageRes = R.drawable.puppy),
-    Puppy(name = "Darka", ageMonths = 4, imageRes = R.drawable.puppy),
-    Puppy(name = "Metik", ageMonths = 7, imageRes = R.drawable.puppy),
-    Puppy(name = "Walos", ageMonths = 2, imageRes = R.drawable.puppy),
+    Puppy(name = "Bruno", sex = M, ageMonths = 7, imageRes = R.drawable.puppy),
+    Puppy(name = "Luna", sex = F, ageMonths = 3, imageRes = R.drawable.puppy),
+    Puppy(name = "Gafa", sex = F, ageMonths = 5, imageRes = R.drawable.puppy),
+    Puppy(name = "Reksio", sex = M, ageMonths = 4, imageRes = R.drawable.puppy),
+    Puppy(name = "Azor", sex = M, ageMonths = 9, imageRes = R.drawable.puppy),
+    Puppy(name = "Anek", sex = M, ageMonths = 11, imageRes = R.drawable.puppy),
+    Puppy(name = "Waldo", sex = M, ageMonths = 3, imageRes = R.drawable.puppy),
+    Puppy(name = "Kasek", sex = M, ageMonths = 6, imageRes = R.drawable.puppy),
+    Puppy(name = "Barka", sex = F, ageMonths = 6, imageRes = R.drawable.puppy),
+    Puppy(name = "Kiti", sex = F, ageMonths = 12, imageRes = R.drawable.puppy),
+    Puppy(name = "Darka", sex = F, ageMonths = 4, imageRes = R.drawable.puppy),
+    Puppy(name = "Metik", sex = M, ageMonths = 7, imageRes = R.drawable.puppy),
+    Puppy(name = "Walos", sex = M, ageMonths = 2, imageRes = R.drawable.puppy),
 )

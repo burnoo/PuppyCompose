@@ -22,8 +22,6 @@ import com.example.androiddevchallenge.data.puppies
 @Preview(backgroundColor = 0xFFFFFF, showBackground = true)
 @Composable
 fun ListItem(navController: NavHostController? = null, puppy: Puppy = puppies.first()) {
-    val (name, ageMonths) = puppy
-
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier.fillMaxWidth()
@@ -35,20 +33,18 @@ fun ListItem(navController: NavHostController? = null, puppy: Puppy = puppies.fi
             }
     ) {
         ListImage(puppy)
-        Text(text = "$name ($ageMonths months)", style = MaterialTheme.typography.h5)
+        Text(text = puppy.name, style = MaterialTheme.typography.h5)
     }
 }
 
 @Preview(backgroundColor = 0xFFFFFF, showBackground = true)
 @Composable
 fun ListImage(puppy: Puppy = puppies.first()) {
-    val (name, _, imageRes) = puppy
-
     val shape = RoundedCornerShape(8.dp)
 
     Image(
-        painter = painterResource(id = imageRes),
-        contentDescription = "Puppy $name",
+        painter = painterResource(id = puppy.imageRes),
+        contentDescription = "Puppy ${puppy.name}",
         modifier = Modifier
             .padding(12.dp)
             .border(

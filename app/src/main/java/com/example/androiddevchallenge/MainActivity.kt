@@ -48,7 +48,9 @@ fun PuppyApp() {
 @Composable
 fun LightPreview() {
     PuppyTheme {
-        PuppyList()
+        Surface(color = MaterialTheme.colors.background) {
+            PuppyList()
+        }
     }
 }
 
@@ -56,6 +58,8 @@ fun LightPreview() {
 @Composable
 fun DarkPreview() {
     PuppyTheme(darkTheme = true) {
-        PuppyList()
+        Surface(color = MaterialTheme.colors.background) {
+            PuppyList()
+        }
     }
 }
