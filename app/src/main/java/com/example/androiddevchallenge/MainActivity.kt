@@ -22,7 +22,6 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.androiddevchallenge.ui.components.PuppyNavigator
 import com.example.androiddevchallenge.ui.components.PuppyScaffold
 import com.example.androiddevchallenge.ui.components.list.PuppyList
 import com.example.androiddevchallenge.ui.theme.PuppyTheme

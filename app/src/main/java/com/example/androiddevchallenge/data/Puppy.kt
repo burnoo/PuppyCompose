@@ -1,3 +1,18 @@
+/*
+ * Copyright 2021 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.example.androiddevchallenge.data
 
 import android.os.Parcelable
@@ -6,21 +21,23 @@ import com.example.androiddevchallenge.R
 import com.example.androiddevchallenge.data.Sex.F
 import com.example.androiddevchallenge.data.Sex.M
 import kotlinx.parcelize.Parcelize
-import java.util.*
+import java.util.Locale
 
 enum class Sex {
     M, F;
 
-    fun text() = when(this) {
+    fun text() = when (this) {
         M -> "he"
         F -> "she"
     }
 }
 
 private fun createDescription(puppy: Puppy) = with(puppy) {
-    ("This is $name. ${sex.text().capitalize(Locale.ENGLISH)} is $ageMonths months old " +
+    (
+        "This is $name. ${sex.text().capitalize(Locale.ENGLISH)} is $ageMonths months old " +
             "and ${sex.text()} is a good ${if (sex == M) "boi" else "girl"}. " +
-            "Really wants to meet you. \uD83E\uDD7A")
+            "Really wants to meet you. \uD83E\uDD7A"
+        )
         .trim()
 }
 
