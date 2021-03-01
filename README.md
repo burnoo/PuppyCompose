@@ -14,10 +14,7 @@ I had only a few hours to implement this app, so this is MVP:
 
 
 ## :camera_flash: Screenshots
-TODO
-<!--  
-<img src="/results/screenshot_1.png" width="260">&emsp;<img src="/results/screenshot_2.png" width="260">  
--->  
+<img src="/results/screenshot_1.png" width="260">&emsp;<img src="/results/screenshot_2.png" width="260">    
 
 ## License
 ```  
