@@ -1,13 +1,16 @@
 package com.example.androiddevchallenge.data
 
+import android.os.Parcelable
 import androidx.annotation.DrawableRes
 import com.example.androiddevchallenge.R
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class Puppy(
     val name: String,
     val ageMonths: Int,
     @DrawableRes val imageRes: Int,
-)
+) : Parcelable
 
 val puppies = listOf(
     Puppy(name = "Bruno", ageMonths = 7, imageRes = R.drawable.puppy),

@@ -22,6 +22,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.androiddevchallenge.ui.components.PuppyNavigator
 import com.example.androiddevchallenge.ui.components.list.PuppyList
 import com.example.androiddevchallenge.ui.theme.PuppyTheme
 
@@ -39,7 +40,7 @@ class MainActivity : AppCompatActivity() {
 @Composable
 fun PuppyApp() {
     Surface(color = MaterialTheme.colors.background) {
-        PuppyList()
+        PuppyNavigator()
     }
 }
 
@@ -47,7 +48,7 @@ fun PuppyApp() {
 @Composable
 fun LightPreview() {
     PuppyTheme {
-        PuppyApp()
+        PuppyList()
     }
 }
 
@@ -55,6 +56,6 @@ fun LightPreview() {
 @Composable
 fun DarkPreview() {
     PuppyTheme(darkTheme = true) {
-        PuppyApp()
+        PuppyList()
     }
 }
