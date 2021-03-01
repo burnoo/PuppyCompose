@@ -1,13 +1,12 @@
 package com.example.androiddevchallenge.ui.components.details
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -25,8 +24,10 @@ fun Details(puppy: Puppy = puppies.first()) {
         Image(
             painter = painterResource(id = puppy.imageRes),
             contentDescription = "Puppy ${puppy.name}",
-            modifier = Modifier
-                .fillMaxWidth()
+            modifier = Modifier.fillMaxWidth()
+                .padding(start = 24.dp, end = 24.dp)
+                .aspectRatio(1f)
+                .clip(shape = MaterialTheme.shapes.medium)
         )
         Text(
             text = puppy.name,

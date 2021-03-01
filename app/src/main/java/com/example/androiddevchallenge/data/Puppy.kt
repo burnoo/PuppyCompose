@@ -36,17 +36,14 @@ data class Puppy(
 }
 
 val puppies = listOf(
-    Puppy(name = "Bruno", sex = M, ageMonths = 7, imageRes = R.drawable.puppy),
-    Puppy(name = "Luna", sex = F, ageMonths = 3, imageRes = R.drawable.puppy),
-    Puppy(name = "Gafa", sex = F, ageMonths = 5, imageRes = R.drawable.puppy),
-    Puppy(name = "Reksio", sex = M, ageMonths = 4, imageRes = R.drawable.puppy),
-    Puppy(name = "Azor", sex = M, ageMonths = 9, imageRes = R.drawable.puppy),
-    Puppy(name = "Anek", sex = M, ageMonths = 11, imageRes = R.drawable.puppy),
-    Puppy(name = "Waldo", sex = M, ageMonths = 3, imageRes = R.drawable.puppy),
-    Puppy(name = "Kasek", sex = M, ageMonths = 6, imageRes = R.drawable.puppy),
-    Puppy(name = "Barka", sex = F, ageMonths = 6, imageRes = R.drawable.puppy),
-    Puppy(name = "Kiti", sex = F, ageMonths = 12, imageRes = R.drawable.puppy),
-    Puppy(name = "Darka", sex = F, ageMonths = 4, imageRes = R.drawable.puppy),
-    Puppy(name = "Metik", sex = M, ageMonths = 7, imageRes = R.drawable.puppy),
-    Puppy(name = "Walos", sex = M, ageMonths = 2, imageRes = R.drawable.puppy),
+    Puppy(name = "Bruno", sex = M, ageMonths = 7, imageRes = R.drawable.puppy_1),
+    Puppy(name = "Luna", sex = F, ageMonths = 3, imageRes = R.drawable.puppy_2),
+    Puppy(name = "Gafa", sex = F, ageMonths = 5, imageRes = R.drawable.puppy_3),
+    Puppy(name = "Reksio", sex = M, ageMonths = 4, imageRes = R.drawable.puppy_4),
+    Puppy(name = "Azor", sex = M, ageMonths = 9, imageRes = R.drawable.puppy_5),
+    Puppy(name = "Anek", sex = M, ageMonths = 11, imageRes = R.drawable.puppy_6),
+    Puppy(name = "Waldo", sex = M, ageMonths = 3, imageRes = R.drawable.puppy_7),
+    Puppy(name = "Kasek", sex = M, ageMonths = 6, imageRes = R.drawable.puppy_9),
+    Puppy(name = "Barka", sex = F, ageMonths = 6, imageRes = R.drawable.puppy_8),
+    Puppy(name = "Kiti", sex = F, ageMonths = 12, imageRes = R.drawable.puppy_10),
 )
